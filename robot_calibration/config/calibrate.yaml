@@ -1,0 +1,39 @@
+robot_calibration:
+  ros__parameters:
+    verbose: true
+    base_link: base_link
+    calibration_steps:
+    - single_calibration_step
+    single_calibration_step:
+      models:
+      - middle_depth_camera
+      middle_depth_camera:
+        type: camera3d
+        frame: middle_camera_depth_optical_frame
+        topic: /camera/middle_camera/depth/color/points
+        camera_info_topic: /camera/middle_camera/depth/camera_info
+
+      # Defines the names of single-value free parameters. 
+      # These can be the names of a joint for which the joint offset should be calculated, 
+      # camera parameters such as focal lengths, or other parameters,
+      # such as driver offsets for Primesense devices.
+      free_params:
+        - middle_depth_camera_fx
+        - middle_depth_camera_fy
+        - middle_depth_camera_cx
+        - middle_depth_camera_cy
+
+      # Defines the names of multi-valued free parameters that are 6-d transforms. 
+      # Also defines which axis are free. X, Y, and Z can all be independently set to free parameters. 
+      # Roll, pitch and yaw can also be set free, however it is important to note that because calibration internally 
+      # uses an angle-axis representation, either all 3 should be set free, or only one should be free. 
+      # You should never set two out of three to be free parameters.
+      free_frames:
+        - middle_camera_link_joint
+      middle_camera_link_joint:
+        x: true
+        y: true
+        z: true
+        roll: true
+        pitch: true
+        yaw: true

@@ -1,0 +1,13 @@
+robot_calibration:
+  ros__parameters:
+    features:
+    - checkerboard_finder
+    # - ground_plane_finder
+    checkerboard_finder:
+      type: robot_calibration::CheckerboardFinder
+      topic: /camera/middle_camera/depth/color/points
+      camera_sensor_name: middle_depth_camera
+      chain_sensor_name: arm
+      points_x: 5
+      points_y: 5
+      size: 0.038

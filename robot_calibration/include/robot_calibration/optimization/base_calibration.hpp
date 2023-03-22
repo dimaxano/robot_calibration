@@ -69,9 +69,9 @@ private:
 
   rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_pub_;
 
-  rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odom_subscriber_;
-  rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr imu_subscriber_;
-  rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr scan_subscriber_;
+  rclcpp::Subscription<nav_msgs::msg::Odometry::ConstSharedPtr>::SharedPtr odom_subscriber_;
+  rclcpp::Subscription<sensor_msgs::msg::Imu::ConstSharedPtr>::SharedPtr imu_subscriber_;
+  rclcpp::Subscription<sensor_msgs::msg::LaserScan::ConstSharedPtr>::SharedPtr scan_subscriber_;
 
   rclcpp::Time last_odom_stamp_;
   double odom_angle_;

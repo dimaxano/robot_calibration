@@ -24,7 +24,7 @@
 #include <robot_calibration/finders/plane_finder.hpp>
 #include <robot_calibration/util/eigen_geometry.hpp>
 #include <sensor_msgs/point_cloud2_iterator.hpp>
-#include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
+#include "tf2_geometry_msgs/tf2_geometry_msgs.h"
 
 static const rclcpp::Logger LOGGER = rclcpp::get_logger("plane_finder");
 

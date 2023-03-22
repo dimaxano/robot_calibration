@@ -21,7 +21,7 @@
 #include <math.h>
 #include <robot_calibration/finders/robot_finder.hpp>
 #include <sensor_msgs/point_cloud2_iterator.hpp>
-#include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
+#include "tf2_geometry_msgs/tf2_geometry_msgs.h"
 
 static const rclcpp::Logger LOGGER = rclcpp::get_logger("robot_finder");
 
